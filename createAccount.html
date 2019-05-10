@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Bank App - Create Account</title>
+	<script type="text/javascript">
+		function entrycheck(){
+			if(document.formname.name.value == ""){
+				alert("No name provided!");
+				document.formname.name.focus();
+			}
+			else if(document.formname.address.value == ""){
+				alert("No address provided!");
+				document.formname.address.focus();
+			}
+			else if(document.getElementById("a1").checked == false && document.getElementById("a2").checked == false){
+				alert("No account type chosen!");
+			}
+			else if(document.getElementById("g1").checked == false && document.getElementById("g2").checked == false && document.getElementById("g3").checked == false){
+				alert("No gender chosen!");
+			}
+			else{
+				document.formname.submit();
+			}
+		}
+	</script>
+</head>
+
+<body style="text-align: center;">
+	<span style="font-size: 100; position: absolute;display: inline-block;"></span>
+	<div style="position: absolute;top:50%;left: 50%;transform:translate(-50%,-50%);background-color: grey;border: solid black thin;height: 50%;width: 50%">
+		<div style="position: absolute;top:5%;left: 10%;transform: translate(-50%,-50%);">
+			<img src="banklogo.png" style="height: 50">
+		</div>
+		<div style="position: absolute;top: 3%; right: 3%;">
+			<input type="button" onclick="parent.location='http://localhost:8080/JSP/BankApp/index.html'" value="Home">
+		</div>
+		<form name="formname" action="http://localhost:8080/JSP/BankApp/createAccount.jsp">
+			<div style="position: absolute;top: 25%;left: 50%;height: 30%;width:100%;transform:translate(-50%,-50%);border: solid black thin;">
+				<div style="position: absolute;top: 50%;left: 25%;transform:translate(-50%,-50%);font-size: 50;font-weight: bold;text-align: left">
+					Name:<br>
+					Address:<br>
+				</div>
+				<div style="position: absolute;top: 50%;left: 75%;transform:translate(-50%,-50%);font-size: 50;font-weight: bold;">
+				
+					<input id="name" name="name"><br><br>
+					<input id="address" name="address"><br>
+				
+				</div>
+			</div>
+			<div style="position: absolute;top: 70%;left: 25%;transform:translate(-50%,-50%);font-size: 35;font-weight: bold;border: solid black thin;width:50%;height:37%">
+				Account Type<br>
+				Savings<input type="radio" id="a1" name="accounttype" value="S"><br>
+				Current<input type="radio" id="a2" name="accounttype" value="C">
+			</div>
+			<div style="position: absolute;top: 70%;left: 75%;transform:translate(-50%,-50%);font-size: 35;font-weight: bold;border: solid black thin;width:50%;height:37%">
+				Gender<br>
+				Male<input type="radio" id="g1" name="gender" value="M"><br>
+				Female<input type="radio" id="g2" name="gender" value="F"><br>
+				Non-Binary<input type="radio" id="g3" name="gender" value="X">
+			</div>
+			<input type="button" value="Submit" onclick="entrycheck()" style="position: absolute;top: 95%;left: 50%;transform:translate(-50%,-50%);font-size: 20;font-weight: bold;">
+		</form>
+	</div>
+</body>
+</html>
