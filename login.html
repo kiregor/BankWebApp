@@ -28,7 +28,7 @@
 			<input type="button" onclick="parent.location='http://localhost:8080/JSP/BankApp/index.html'" value="Home">
 		</div>
 		<div style="position: absolute;top: 30%;font-size: 50;font-weight: bold;text-align: center;">
-			<form onsubmit="return validateForm()" action="http://localhost:8080/JSP/BankApp/login.jsp">
+			<form onsubmit="return validateForm()" action="http://localhost:8080/JSP/BankApp/login.jsp" method="POST">
 				Username: Password:<br>
 				<input id= "uname" name="username">
 				<input id="pwd" type="password" name="password">

@@ -63,6 +63,18 @@
 								out.println("<input name='active' value='" + rs.getString(4) + "'><br>");
 								out.println("<input type='submit' value='Submit Changes'>");
 								out.println("</form>");
+
+								out.println("</div>");
+								out.println("<div style='position:absolute;top:300%;left:50%;transform:translate(-50%,-50%);font-size: 40;text-align: center;'>");
+								out.println("<input type='button' value='Change Password' onclick='revealpass()''>");
+								out.println("</div>");
+								out.println("<div id='passworddiv' style='position: absolute;top:420%;left:50%;transform:translate(-50%,-50%);visibility: hidden;'>");
+								out.println("<form onsubmit='return password()' action='http://localhost:8080/JSP/BankApp/passedit.jsp' method='POST'>");
+								out.println("<input type='password' id='pass1' name='pass1'><br>");
+								out.println("<input name='accno' id='accno' style='visibility:hidden;' value='" + request.getParameter("user") + "'>");
+								out.println("<input type='password' id='pass2' name='pass2'><br>");
+								out.println("<input type='submit' value='Change'>");
+								out.println("</form>");
 							}
 							catch(Exception t){
 								out.println("<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color:grey;border:solid black thin;'>" + t.toString() + "</div>");
@@ -76,19 +88,10 @@
 						out.println(e.toString());
 					}
 				%>
-				</div>
-				<div style="position: absolute;top: 300%;left:50%;transform:translate(-50%,-50%);font-size: 40;text-align: center;">
-					<input type='button' value='Change Password' onclick="revealpass()">
-				</div>
-				<div id="passworddiv" style="position: absolute;top:420%;left:50%;transform:translate(-50%,-50%);visibility: hidden;">
-					<form onsubmit="return password()" action="http://localhost:8080/JSP/BankApp/passedit.jsp">
-						<input type="password" id="pass1" name="pass1"><br>
-						<%
-							out.println("<input name='accno' id='accno' style='visibility:hidden;' value='" + request.getParameter("user") + "'>");
-						%>
-						<input type="password" id="pass2" name="pass2"><br>
-						<input type="submit" value="Change">
-					</form>
+
+						
+						
+					
 				</div>
 			</div>
 		</div>
