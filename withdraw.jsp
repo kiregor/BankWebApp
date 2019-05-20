@@ -9,7 +9,7 @@
 			let balancestring = document.getElementById("balance").innerHTML;
 			let balancevalue = parseInt(balancestring);
 			let withdrawvalue = parseInt(document.getElementById("withdraw").value);
-			if(document.getElementById("withdraw").value == ""){
+			if(document.getElementById("withdraw").value === ""){
 				alert("You have not provided a withdraw value");
 				document.getElementById("number").focus();
 			}

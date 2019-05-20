@@ -7,7 +7,7 @@
 
 	<script>
 		function validateForm(){
-			if(document.getElementById("number").value == ""){
+			if(document.getElementById("number").value === ""){
 				alert("You have not provided a deposit value");
 				document.getElementById("number").focus();
 				return false;

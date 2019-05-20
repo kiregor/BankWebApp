@@ -4,12 +4,12 @@
 
 	<script>
 		function validateForm(){
-			if(document.getElementById("uname").value == ""){
+			if(document.getElementById("uname").value === ""){
 				alert("No username is provided");
 				document.getElementById("uname").focus();
 				return false;
 			}
-			else if(document.getElementById("pwd").value == ""){
+			else if(document.getElementById("pwd").value === ""){
 				document.getElementById("pwd").focus();
 				alert("No password is provided");
 				return false;
