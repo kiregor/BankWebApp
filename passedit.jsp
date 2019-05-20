@@ -12,4 +12,7 @@
 	catch(Exception t){
 		out.println("<html>" + t.toString() + "</html>");
 	}
+	finally{
+		con.close();
+	}
 %>

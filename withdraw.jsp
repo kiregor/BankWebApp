@@ -6,9 +6,9 @@
 	<title>Bank App - Withdraw</title>
 	<script type="text/javascript">
 		function withdrawCheck(){
-			var balancestring = document.getElementById("balance").innerHTML;
-			var balancevalue = parseInt(balancestring);
-			var withdrawvalue = parseInt(document.getElementById("withdraw").value);
+			let balancestring = document.getElementById("balance").innerHTML;
+			let balancevalue = parseInt(balancestring);
+			let withdrawvalue = parseInt(document.getElementById("withdraw").value);
 			if(document.getElementById("withdraw").value == ""){
 				alert("You have not provided a withdraw value");
 				document.getElementById("number").focus();

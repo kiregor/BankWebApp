@@ -58,7 +58,7 @@
 				</div>
 			</div>
 			<div style="position: absolute;top: 250%;left:10%;font-size: 30;text-align: left;">
-				<form onsubmit="validateForm()" action="http://localhost:8080/JSP/BankApp/depositaction.jsp">
+				<form onsubmit="return validateForm()" action="http://localhost:8080/JSP/BankApp/depositaction.jsp">
 					<input type="number" name="deposit" id="number">
 					<input type="submit">
 				</form>

@@ -35,4 +35,7 @@ try{
 catch(Exception t){
 	response.sendRedirect("failed.jsp?pass=" + t.toString());
 }
+finally{
+	con.close();
+}
 %>

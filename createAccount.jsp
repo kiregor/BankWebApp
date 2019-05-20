@@ -1,4 +1,5 @@
 <%@ page import="java.sql.*" %>
+<%@ include file="connection.jsp" %>
 
 <%
 String accountType = request.getParameter("accounttype");
@@ -6,9 +7,6 @@ String name = request.getParameter("name");
 String gender = request.getParameter("gender");
 String address = request.getParameter("address");
 try{
-	Class.forName("com.mysql.cj.jdbc.Driver");
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost/bankwebapp", "root", "");
-	Statement st = con.createStatement();
 	String query = "select LPAD(ifnull(max(substring(accno,3,5))+1,'001'),3,'0') from (select * from accounts where accno like '" + accountType + "%') as t1";
 	ResultSet rs = st.executeQuery(query);
 	rs.next();
@@ -26,4 +24,8 @@ try{
 catch(Exception t){
 	response.sendRedirect("failed.jsp?pass=" + t.toString());
 }
+finally{
+	con.close();
+}
+
 %>
