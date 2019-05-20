@@ -9,13 +9,19 @@
 			var balancestring = document.getElementById("balance").innerHTML;
 			var balancevalue = parseInt(balancestring);
 			var withdrawvalue = parseInt(document.getElementById("withdraw").value);
-			if(balancevalue >= withdrawvalue){
+			if(document.getElementById("withdraw").value == ""){
+				alert("You have not provided a withdraw value");
+				document.getElementById("number").focus();
+			}
+			else if(balancevalue >= withdrawvalue){
 				parent.location="http://localhost:8080/JSP/BankApp/withdrawaction.jsp?withdraw=" + withdrawvalue;
 			}
 			else{
 				alert("You do not have the requisit funds in your account to make this withdrawal!");
 			}
 		}
+
+
 	</script>
 </head>
 <body style="text-align: center;">
@@ -60,7 +66,7 @@
 				</div>
 			</div>
 			<div style="position: absolute;top: 250%;left:10%;font-size: 30;text-align: left;">
-				<form>
+				<form onsubmit="">
 					<input type="number" name="withdraw" id="withdraw">
 					<input type="button" value="submit" onclick="withdrawCheck()">
 				</form>

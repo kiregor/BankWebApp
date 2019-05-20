@@ -4,6 +4,17 @@
 <html>
 <head>
 	<title>Bank App - Deposit</title>
+
+	<script>
+		function validateForm(){
+			if(document.getElementById("number").value == ""){
+				alert("You have not provided a deposit value");
+				document.getElementById("number").focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
 </head>
 <body style="text-align: center;">
 	<span style="font-size: 100; position: absolute;display: inline-block;"></span>
@@ -47,8 +58,8 @@
 				</div>
 			</div>
 			<div style="position: absolute;top: 250%;left:10%;font-size: 30;text-align: left;">
-				<form action="http://localhost:8080/JSP/BankApp/depositaction.jsp">
-					<input type="number" name="deposit">
+				<form onsubmit="validateForm()" action="http://localhost:8080/JSP/BankApp/depositaction.jsp">
+					<input type="number" name="deposit" id="number">
 					<input type="submit">
 				</form>
 			</div>
